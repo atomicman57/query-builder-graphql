@@ -1,5 +1,10 @@
 var Query = require('../');
 
+logger = { 
+  log: (input) => {
+  return console.log(input);
+  }
+}
 
 /*
 {
@@ -39,12 +44,12 @@ let FetchLeeAndSam = new Query("FetchLeeAndSam");
 
 let lee = new Query("user",{id : '1'});
   lee.setAlias('lee');
-  lee.find({name:true});
+  // lee.find({name:true});
   logger.log("lee",lee.toString());
   
 let sam = new Query("user","sam");
   sam.filter({id : '2'});
-  sam.find("name");
+  // sam.find("name");
   logger.log("sam",sam+"");
   
  console.log(FetchLeeAndSam.find(lee,sam)+"");
